@@ -1,0 +1,17 @@
+@import '../../styles/helpers/variables';
+
+.container {
+  padding: 40px;
+  border: 1px solid $gray;
+}
+
+.item:not(:last-child){
+  margin-bottom: 20px;
+}
+
+.itemTitle {
+  display: inline-block;
+  width: 100px;
+  font-size: 20px;
+  font-weight: 700;
+}

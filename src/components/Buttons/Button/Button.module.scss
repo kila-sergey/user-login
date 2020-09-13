@@ -1,0 +1,32 @@
+@import '../../../styles/helpers/variables';
+@import '../../../styles/helpers/mixins';
+
+.button {
+  width: 250px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $black;
+  color: #fff;
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color $speed, opacity $speed;
+  outline: none;
+  @include onFocus(2px,1px,1px,$black);
+  &:hover:not(:focus):not(:active) {
+    background-color: #fff;
+    color: $black;
+  }
+
+  &:active {
+    opacity: .7;
+  }
+
+  &:disabled {
+    opacity: 0.2;
+    cursor: default;
+  }
+}

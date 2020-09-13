@@ -1,0 +1,20 @@
+@import '../../../styles/helpers/variables';
+@import '../../../styles/helpers/mixins';
+
+.button {
+  padding: 5px 20px;
+  border: 1px solid $black;
+  border-radius: 2px;
+  border:1px solid $gray;
+  background-color: transparent;
+  cursor:pointer;
+  transition: background-color $speed, opacity $speed;
+  @include onFocus(2px,1px,1px,$gray);
+  outline: none;
+  &:hover:not(:focus):not(:active){
+    background-color: rgba($gray,.4);
+  }
+  &:active {
+    opacity: .7;
+  }
+}

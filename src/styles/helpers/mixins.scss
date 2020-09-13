@@ -1,0 +1,26 @@
+@mixin onFocus($angular, $outerBorderWidth, $innerBorderWidth, $color) {
+  -webkit-transform: translateZ(0) scale(1, 1);
+	transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	position: relative;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: -($outerBorderWidth + $innerBorderWidth);
+		right: -($outerBorderWidth + $innerBorderWidth);
+		bottom: -($outerBorderWidth + $innerBorderWidth);
+		left: -($outerBorderWidth + $innerBorderWidth);
+		border: $outerBorderWidth solid transparent;
+		border-radius: $angular + 2px;
+		transition: border-color $speed;
+	}
+
+	&:not(:active) {
+		&:focus {
+			&:before {
+				border-color: $color;
+			}
+		}
+	}
+}
